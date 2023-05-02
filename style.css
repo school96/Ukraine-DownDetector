@@ -1,0 +1,61 @@
+body {
+    margin: 0px;
+    font-family: system-ui;
+    background-color:dimgray;
+    color: white;
+}
+
+p {
+    margin: 0px;
+}
+
+.header {
+    background-color: rgb(49, 44, 44);
+    color: white;
+    padding: 15px;
+}
+
+#headertext {
+    font-weight: bold;
+    font-size: 30pt;
+}
+
+.title {
+    font-weight: bolder;
+    font-size: 20pt;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 5px;
+}
+
+.sublight {
+    font-weight: lighter;
+}
+
+.standard {
+    font-weight: normal;
+    font-size: 15pt;
+    margin-left: 5px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+
+.darkensub {
+    background-color: rgb(49, 44, 44);
+    color: white;
+    padding: 4px;
+}
+
+#locationmap {
+    height: 500px;
+    width: 500px;
+    margin: 8px;
+}
+
+#lat {
+    display: none;
+}
+
+#lon {
+    display: none;
+}

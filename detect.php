@@ -20,7 +20,7 @@
         $headers = get_headers("http://" . $_GET["site"]);
         $status_code = substr($headers[0], 9, 3);
         $json = json_decode(file_get_contents($url));
-        if ($status_code == '200' || $status_code == '301' || $status_code == '307') {
+        if ($status_code == '200' || $status_code == '301' || $status_code == '307' || $status_code == '302') {
             echo "<p class='title'>Website <a class='sublight'>" . urldecode($_GET["site"]) . "</a> is online!</p>";
         } else {
             echo "<p class='title'>Website <a class='sublight'>" . urldecode($_GET["site"]) . "</a> is offline!</p>";

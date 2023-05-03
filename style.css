@@ -77,6 +77,8 @@ p {
 .siteobj {
     background-color: rgb(49, 44, 44);
     flex-grow: 1;
+    min-width: calc(33% - 10px);
+    max-width: calc(33% - 10px);
     height: 80px;
     display: flex;
     padding: 10px;

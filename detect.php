@@ -49,6 +49,15 @@
                     maxZoom: 20,
                     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
                 }).addTo(map); 
+                // This adds a popup to the approximate location of the server. This is primarily for when the approximate location is a small town.
+                L.popup().setLatLng([parseFloat(document.getElementById("lat").innerHTML), parseFloat(document.getElementById("lon").innerHTML)]).setContent("This site's servers are approximately around here.").openOn(map);
+                // This adds a circle around the area.
+                L.circle([parseFloat(document.getElementById("lat").innerHTML), parseFloat(document.getElementById("lon").innerHTML)], {
+                    color: 'red',
+                    fillColor: '#b37717',
+                    fillOpacity: 0.5,
+                    radius: 7500
+                }).addTo(map)
             </script>
         </div>
     </body>

@@ -16,10 +16,15 @@
     <body>
         <div class="header"><p id="headertext">Ukrainian Site Status</p></div>
         <?php
+        // Sets the API URL based off the site
         $url = "http://ip-api.com/json/" . urldecode($_GET["site"]);
+        // This get the HTTP headers for the site
         $headers = get_headers("http://" . $_GET["site"]);
+        // This gets the status code from the HTTP headers
         $status_code = substr($headers[0], 9, 3);
+        // This will get the JSON file that tells us location information from the the API
         $json = json_decode(file_get_contents($url));
+        // This will tell the user if the site is online or offline based on the HTTP status code
         if ($status_code == '200' || $status_code == '301' || $status_code == '307' || $status_code == '302') {
             echo "<p class='title'>Website <a class='sublight'>" . urldecode($_GET["site"]) . "</a> is online!</p>";
         } else {
@@ -30,10 +35,12 @@
         <div class="darkensub">
             <p class="title">Site information for <a class="sublight">
                 <?php
+                // Just gets the site name
                 echo urldecode($_GET["site"]);
                 ?>
             </a></p>
             <?php
+            // Writes the location, ISP and IP address to the webpage
             echo "<p class='standard'><b>Location: </b>" . $json->city . ", " . $json->regionName . ", " . $json->country . "</p>";
             echo "<p class='standard'><b>Internet Service Provider: </b>" . $json->isp . "</p>"; 
             echo "<p class='standard'><b>Site IP: </b>" . $json->query . "</p>"; 

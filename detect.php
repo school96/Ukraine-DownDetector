@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <!-- This makes the title and adds in the CSS stylesheet -->
         <title><?php
         echo urldecode($_GET["site"]);
-        ?></title>
+        ?></title> 
         <link rel="stylesheet", href="style.css"></link>
-        <!-- Leaflet library code -->
+        <!-- This adds Leaflet, a JavaScript library for maps -->
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
         integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
         crossorigin=""/>
@@ -18,7 +19,7 @@
         <?php
         // Sets the API URL based off the site
         $url = "http://ip-api.com/json/" . urldecode($_GET["site"]);
-        // This get the HTTP headers for the site
+        // This get the HTTP headers for the site, which provides information about the connection
         $headers = get_headers("http://" . $_GET["site"]);
         // This gets the status code from the HTTP headers
         $status_code = substr($headers[0], 9, 3);
